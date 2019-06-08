@@ -1,24 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// pulling in data from json file
+import data from "./data/example.json";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {data.map((eachItem, i) => (
+        <div key={i}>
+          <h1>{eachItem.title}</h1>
+          <p>{eachItem.description}</p>
+        </div>
+      ))}
     </div>
   );
 }
